@@ -1,0 +1,434 @@
+.box {
+  margin-left: 500px;
+  margin-top: 50px;
+  width: 300px;
+  height: 50px;
+}
+
+.container {
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+
+.container input#search {
+  width: 400px;
+  height: 50px;
+  background: #f1f1f1;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #343d46;
+  padding-left: 5px;
+  border-radius: 2px;
+}
+
+.container .icon {
+  position: absolute;
+  top: 30%;
+  right: 90%;
+  z-index: 1;
+  color: #9f7fd4;
+}
+
+.search {
+  width: 80px;
+  height: 50px;
+  margin-left: 0px;
+  border-radius: 2px;
+  border: none;
+  background: #9f7fd4;
+  color: #f1f1f1;
+}
+
+button:hover {
+  background: #35d578;
+  color: black;
+}
+
+.section {
+  height: 100vh;
+}
+
+.section-first {
+  height: 90vh;
+  background: url("http://imageshack.com/a/img923/6169/ReaHpu.jpg") no-repeat center center fixed;
+  background-size: cover;
+  
+}
+
+
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Montserrat', sans-serif;
+	line-height: 1.6;
+	margin: 0;
+	min-height: 100vh;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+      text-align: right;
+
+
+}
+
+
+h2,
+h3,
+a {
+  color: #f6f4f4;
+        text-align: right;
+
+
+}
+
+a {
+	text-decoration: none;
+}
+
+
+
+.logo {
+	margin: 0;
+	font-size: 1.45em;
+}
+
+.main-nav {
+    margin-top: -60px;
+    /* margin-left: 1000px; */
+    display: flex;
+    text-align: right;
+    float: right
+
+
+
+}
+.logo a,
+.main-nav a {
+	padding: 10px 15px;
+  /* text-transform: uppercase; */
+	text-align: left;
+    display: block;
+  
+
+}
+
+.main-nav a {
+	color: #f4f6f8;
+    /* font-size: .99em; */
+    font-size: 18px;
+    text-align: right;
+        display: block;
+        font-family: "Arial Black", "Gadget", sans-serif;
+
+
+    
+}
+
+.main-nav a:hover {
+	color: #19f1f1;
+}
+
+
+
+.header {
+	padding-top: -5px;
+  padding-bottom: -5px;
+    /* opacity: 0.85; */
+
+	/* border: 1px solid #a2a2a2; */
+  background-color: #000000;
+	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	/* -webkit-border-radius: 5px;
+	-moz-border-radius: 15px;
+    border-radius: 5px; */
+    flex-direction: column;
+		align-items: center;
+		width: 80%;
+		margin: 0 auto;
+		width: 1440px;
+}
+
+.h1margin {
+ margin-top: 150px;
+ margin-left: 10px;
+
+font-family: Arial,sans-serif;
+color: rgb(106, 16, 234);
+font-weight: 700;
+font-size: 44px
+
+
+  
+}
+
+h2 {
+  color: white;
+}
+
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+  
+  .card {
+    display: inline-block;
+  }
+
+
+.scrolling-wrapper-flexbox {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+
+}
+  
+  .card {
+    flex: 0 0 auto;
+    margin-right: 20px;
+  }
+
+
+.card {
+  border: 2px solid red;
+  width: 300px;
+  height: 300px;
+  background: black;
+}
+
+.card:hover {
+  box-shadow: 0 26px 16px 0 rgba(0,0,0,0.2);
+}
+
+.scrolling-wrapper, .scrolling-wrapper-flexbox {
+  height: 80px;
+  margin-bottom: 20px;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+ 
+}
+
+
+
+/* Sign up & Login InputForm Styles */
+
+.box2 {
+  margin-left: 500px;
+  margin-top: 20px;
+  width: 300px;
+  height: 50px;
+}
+
+.container2 {
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+
+.container2 input#search {
+  width: 450px;
+  height: 50px;
+  background: #ffffff;
+  border: 1px solid #b8b8c8;
+  border-radius: 2px;
+  font-size: 10pt;
+  float: left;
+  color: #343d46;
+  padding-left: 5px;
+  border-radius: 2px;
+}
+
+.container2 .icon2 {
+  position: absolute;
+  top: 30%;
+  right: 90%;
+  z-index: 1;
+  color: #9f7fd4;
+}
+
+
+
+.box3 {
+  margin-left: 500px;
+  margin-top: 30px;
+  width: 300px;
+  height: 50px;
+}
+
+.container3 {
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+
+.container3 input#search {
+  width: 450px;
+  height: 50px;
+  background: #ffffff;
+  border: 1px solid #b8b8c8;
+  border-radius: 2px;
+  font-size: 10pt;
+  float: left;
+  color: #343d46;
+  padding-left: 5px;
+  border-radius: 2px;
+}
+
+.container3 .icon3 {
+  position: absolute;
+  top: 30%;
+  right: 90%;
+  z-index: 1;
+  color: #9f7fd4;
+}
+
+.spotifyblacklogo{
+   /* margin-left: 600px;
+  margin-top: 200px; */
+    margin: 50px 620px;
+
+
+
+}
+
+.button1 {
+  background-color: #3B5998;
+  border: none;
+  color: white;
+  padding: 15px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 20px 2px;
+  margin-left: 580px;
+  cursor: pointer;  
+  border-radius:2em;
+/*   box-sizing: border-box; */
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+
+}
+
+.button1:hover {
+  background:  rgb(56, 98, 189);
+  color: rgb(245, 244, 244);
+}
+
+.button2 {
+ background-color: #1DB954;
+  border: none;
+  color: white;
+  padding: 15px 120px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 60px 2px;
+  margin-left: 580px;
+  cursor: pointer;  
+  border-radius:2em;
+/*   box-sizing: border-box; */
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+
+}
+
+.button2:hover {
+  background: #35d578;
+  color: rgb(245, 244, 244);
+}
+
+
+/* SongListContainer and SongList styles */
+
+
+/* app fonts                  */
+
+.appfont{
+
+/* font-weight: 700; */
+/* font-family: "Arial Black", "Gadget", sans-serif; */
+  font-family: Arial, Helvetica, sans-serif;
+
+
+
+}
+
+.pinkpurplecolor {
+  color:  rgb(221, 69, 211)
+
+}
+
+.purplecolor {
+  color: rgb(106, 16, 234)
+}
+
+/* homepage styles */
+
+.header1{
+  /* font-family: "Arial Black", "Gadget", sans-serif; */
+
+  color: #f6f6f6;
+  margin-top: 30px;
+ margin-left: 550px;
+ font-size: 50px;
+ font-weight: 700
+}
+
+.text1{
+  /* font-family: "Arial Black", "Gadget", sans-serif; */
+
+  color: #f6f6f6;
+  margin-top: 10px;
+ margin-left: 500px;
+ font-size: 20px;
+  font-weight: 700
+
+
+
+}
+
+.songnametext {
+  /* font-family: "Arial Black", "Gadget", sans-serif; */
+  color:  rgb(221, 69, 211);
+  font-weight: 700;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+.songartisttext {
+  /* font-family: "Arial Black", "Gadget", sans-serif; */
+  /* color: rgb(106, 16, 234) */
+  font-weight: 700;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+.songlistcontainer{
+    /* font-family: "Arial Black", "Gadget", sans-serif; */
+    color: rgb(106, 16, 234);
+    font-weight: 700;
+    font-size: 44px
+
+}
+
+
+	
+
+
+
