@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import backgroundimage from "../images/bluebackground1.png";
 import spotifywhitelogo from "../images/spotifywhitelogo.png";
-import SongContainer from "./SongContainer"
-import SongListContainer from "./SongListContainer"
+import SongContainer from "./SongContainer";
+import SongListContainer from "./SongListContainer";
 
 import "../css/style.css";
 
@@ -44,18 +44,18 @@ export default class SpotifyIndex extends Component {
   handleSubmit = inputvalues => {
     this.getArtistIds(inputvalues).then(artistsIds => {
       this.getArtistSongs(artistsIds).then(artistSongs => {
-        let newArtistSongs = artistSongs.flat(Infinity)
+        let newArtistSongs = artistSongs.flat(Infinity);
         console.log(newArtistSongs);
-        let searchedArtistSongs = this.randomizeArtistTracks(newArtistSongs)
-        console.log(searchedArtistSongs)
+        let searchedArtistSongs = this.randomizeArtistTracks(newArtistSongs);
+        // console.log(searchedArtistSongs);
         this.getSimilarArtistsSongs(artistsIds).then(similarArtistSongs => {
           let newsongs = similarArtistSongs.flat(Infinity);
-          console.log(newsongs);
+          // console.log(newsongs);
           let searchedSongs = this.randomizeTracks(newsongs);
-          console.log(searchedSongs);
-          let finalSongList = [...searchedArtistSongs, ...searchedSongs]
-          this.setState({Songs: finalSongList})
-          console.log(finalSongList)
+          // console.log(searchedSongs);
+          let finalSongList = [...searchedArtistSongs, ...searchedSongs];
+          this.setState({ Songs: finalSongList });
+          // console.log(finalSongList);
         });
       });
     });
@@ -160,7 +160,7 @@ export default class SpotifyIndex extends Component {
     return randomSongs;
   }
 
-   randomizeArtistTracks(newArtistSongs) {
+  randomizeArtistTracks(newArtistSongs) {
     let randomSongs = [];
     let i = 1;
     while (i <= 10) {
@@ -174,16 +174,85 @@ export default class SpotifyIndex extends Component {
     return randomSongs;
   }
 
+  userAuthorization = () => {
+    const client_id = "0724f13286da41eb90bef57cebcc0202";
+    const redirect_uri = encodeURIComponent("http://localhost:3000/save_token");
+    const state = "8732T4ERYG23GR";
+    window.location.replace(
+      `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=code&redirect_uri=${redirect_uri}&scope=user-read-private%20playlist-modify-public&state=${state}`
+    );
+  };
 
-  
+  saveUserPlaylist = access_token => {
+    this.getUserData(access_token).then(userId => {
+      this.createUserPlaylist(access_token, userId).then(playlistId => {
+        this.addSongsToPlaylist(access_token, playlistId);
+        console.log(playlistId);
+      });
+      console.log(userId);
+    });
+  };
+
+  getUserData = access_token => {
+    return fetch(`https://api.spotify.com/v1/me`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${access_token}`
+      }
+    })
+      .then(res => res.json())
+      .then(userdata => {
+        return userdata.id;
+      });
+  };
+
+  createUserPlaylist = (access_token, userId) => {
+    return fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${access_token}`
+      },
+      body: JSON.stringify({
+        name: "Flatiron Playlist",
+        description: "A unique playlist just for you"
+      })
+    })
+      .then(res => res.json())
+      .then(playlistdata => {
+        return playlistdata.id;
+      });
+  };
+
+  addSongsToPlaylist = (access_token, playlistId) => {
+    return fetch(`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, {
+      method: "POST",
+      body: JSON.stringify({
+        uris: this.state.Songs.map(song => {
+          return song.uri;
+        })
+      }),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${access_token}`
+      }
+    })
+      .then(res => res.json())
+      .then(res => {
+        return res;
+      });
+  };
 
   render() {
+    const access_token = this.props.match.params.access_token;
     return (
       <div
         style={{
           height: "56vh",
- background: "rgb(148,60,255)",
-background: "linear-gradient(90deg, rgba(148,60,255,1) 0%, rgba(221,69,211,1) 41%, rgba(252,154,87,1) 90%)"
+          width: "100vw",
+          background: "rgb(148,60,255)",
+          background:
+            "linear-gradient(90deg, rgba(148,60,255,1) 0%, rgba(221,69,211,1) 41%, rgba(252,154,87,1) 90%)"
         }}
       >
         <header className="header">
@@ -212,13 +281,13 @@ background: "linear-gradient(90deg, rgba(148,60,255,1) 0%, rgba(221,69,211,1) 41
         </header>
 
         <h1 className="header1">Love Your Music</h1>
-        <p className="text1">Make the playlist of your dreams based on artists</p>
-
+        <p className="text1">
+          Make the playlist of your dreams based on artists
+        </p>
 
         <form
           onSubmit={e => {
             e.preventDefault();
-            // console.log(e.target[0].value);
             this.handleSubmit(e.target[0].value);
           }}
         >
@@ -241,14 +310,28 @@ background: "linear-gradient(90deg, rgba(148,60,255,1) 0%, rgba(221,69,211,1) 41
 
         <br></br>
 
+        {access_token ? (
+          <button
+            className="button3"
+            onClick={() => this.saveUserPlaylist(access_token)}
+          >
+            Save Playlist
+          </button>
+        ) : (
+          <button className="button3" onClick={() => this.userAuthorization()}>
+            Authorize with Spotify
+          </button>
+        )}
+
+        <button className="button4" onClick={null}>
+          Make new playlist
+        </button>
+
         <h1 className="h1margin">Here Are Your Songs</h1>
 
         <SongContainer songs={this.state.Songs} />
-        <SongListContainer songs={this.state.Songs}/>
-
-        
+        <SongListContainer songs={this.state.Songs} />
       </div>
     );
   }
 }
-

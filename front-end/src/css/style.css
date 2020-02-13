@@ -153,12 +153,15 @@ a {
 		align-items: center;
 		width: 80%;
 		margin: 0 auto;
-		width: 1440px;
+		width: 100vw;
 }
 
 .h1margin {
- margin-top: 150px;
- margin-left: 10px;
+ /* margin-top: 150px;
+ margin-left: 10px; */
+
+margin-top: 6vh;
+ margin-left: 1vw;
 
 font-family: Arial,sans-serif;
 color: rgb(106, 16, 234);
@@ -221,7 +224,7 @@ h2 {
 /* Sign up & Login InputForm Styles */
 
 .box2 {
-  margin-left: 500px;
+  margin-left: 34.5vw;
   margin-top: 20px;
   width: 300px;
   height: 50px;
@@ -258,7 +261,7 @@ h2 {
 
 
 .box3 {
-  margin-left: 500px;
+  margin-left: 34.5vw;
   margin-top: 30px;
   width: 300px;
   height: 50px;
@@ -295,7 +298,7 @@ h2 {
 .spotifyblacklogo{
    /* margin-left: 600px;
   margin-top: 200px; */
-    margin: 50px 620px;
+    margin: 50px 41vw;
 
 
 
@@ -311,7 +314,7 @@ h2 {
   display: inline-block;
   font-size: 15px;
   margin: 20px 2px;
-  margin-left: 580px;
+  margin-left: 38.5vw;
   cursor: pointer;  
   border-radius:2em;
 /*   box-sizing: border-box; */
@@ -335,7 +338,7 @@ h2 {
   display: inline-block;
   font-size: 15px;
   margin: 60px 2px;
-  margin-left: 580px;
+  margin-left: 38.5vw;
   cursor: pointer;  
   border-radius:2em;
 /*   box-sizing: border-box; */
@@ -426,6 +429,60 @@ h2 {
     font-size: 44px
 
 }
+
+/* Save playlist button */
+
+.button3 {
+  background-color: rgb(106, 16, 234);
+  border: none;
+  color: white;
+  padding: 15px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 20px 2px;
+  margin-left: 2vw;
+  margin-top: 23vh;
+  cursor: pointer;  
+  border-radius:2em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+
+}
+
+.button3:hover {
+  background:  rgb(56, 98, 189);
+  color: rgb(245, 244, 244);
+}
+
+/* new playlist button */
+
+.button4 {
+  background-color: rgb(221, 69, 211);
+  border: none;
+  color: white;
+  padding: 15px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 20px 2px;
+  margin-left: 2vw;
+  margin-top: 23vh;
+  cursor: pointer;  
+  border-radius:2em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+
+}
+
+.button4:hover {
+  background:  rgb(56, 98, 189);
+  color: rgb(245, 244, 244);
+}
+
+
 
 
 	
