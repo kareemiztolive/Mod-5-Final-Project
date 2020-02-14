@@ -3,6 +3,8 @@ import backgroundimage from "../images/bluebackground1.png";
 import spotifywhitelogo from "../images/spotifywhitelogo.png";
 import SongContainer from "./SongContainer";
 import SongListContainer from "./SongListContainer";
+import { Link } from "react-router-dom";
+
 
 import "../css/style.css";
 
@@ -214,7 +216,7 @@ export default class SpotifyIndex extends Component {
         Authorization: `Bearer ${access_token}`
       },
       body: JSON.stringify({
-        name: "Flatiron Playlist",
+        name: "Flatiron ShowCase Playlist",
         description: "A unique playlist just for you"
       })
     })
@@ -275,7 +277,9 @@ export default class SpotifyIndex extends Component {
               <a href="#">Download</a>
             </li>
             <li>
-              <a href="#">Profile</a>
+              <a href="/home">Home</a>
+
+              {/* <Link> {to="/home"}</Link> */}
             </li>
           </ul>
         </header>

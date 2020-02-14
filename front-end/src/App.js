@@ -4,6 +4,7 @@ import "./App.css";
 import { BrowserRouter, Route } from "react-router-dom";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
+import HomePage from "./components/HomePage";
 
 export default class App extends Component {
   state = {
@@ -43,6 +44,7 @@ export default class App extends Component {
               />
             )}
           />
+          <Route exact path="/home" component={HomePage} />
         </BrowserRouter>
       </div>
     );
