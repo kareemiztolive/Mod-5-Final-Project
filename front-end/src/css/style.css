@@ -156,21 +156,6 @@ a {
 		width: 100vw;
 }
 
-.h1margin {
- /* margin-top: 150px;
- margin-left: 10px; */
-
-margin-top: 6vh;
- margin-left: 1vw;
-
-font-family: Arial,sans-serif;
-color: rgb(106, 16, 234);
-font-weight: 700;
-font-size: 44px
-
-
-  
-}
 
 h2 {
   color: white;
@@ -370,7 +355,7 @@ h2 {
 
 .pinkpurplecolor {
   color:  rgb(221, 69, 211)
-
+  
 }
 
 .purplecolor {
@@ -379,38 +364,193 @@ h2 {
 
 /* spotifyindex/playlist styles */
 
-.header1{
-  /* font-family: "Arial Black", "Gadget", sans-serif; */
 
-  color: #f6f6f6;
-  margin-top: 10vh;
- margin-left: 40vw;
- font-size: 50px;
- font-weight: 700
+@media  (min-width: 800px) {
+
+  .header1{
+    /* font-family: "Arial Black", "Gadget", sans-serif; */
+  
+    color: #f6f6f6;
+    margin-top: 2vh;
+   margin-left: 34vw;
+   font-size: 50px;
+   font-weight: 700
+  }
+  
+  .text1{
+    /* font-family: "Arial Black", "Gadget", sans-serif; */
+  
+    color: #f6f6f6;
+    margin-top: 10px;
+   margin-left: 30vw;
+   font-size: 20px;
+    font-weight: 700
+ 
+  }  
+
+  .box {
+    margin-left: 30vw;
+    margin-top: 35px;
+    width: 300px;
+    height: 50px;
+  }
+
+  .container input#search {
+    width: 400px;
+    height: 50px;
+    background: #f1f1f1;
+    border: none;
+    font-size: 10pt;
+    float: left;
+    color: #343d46;
+    padding-left: 5px;
+    border-radius: 2px;
+  }
+
+  
+  .search {
+    width: 80px;
+    height: 50px;
+    margin-left: 0px;
+    border-radius: 2px;
+    border: none;
+    background:   rgb(106, 16, 234);
+    color: #f1f1f1;
+  }
+
+  .songlistcontainer{
+    /* font-family: "Arial Black", "Gadget", sans-serif; */
+    color: rgb(106, 16, 234);
+    font-weight: 700;
+    font-size: 44px;
+    margin-top: 6vh
+
 }
 
-.text1{
-  /* font-family: "Arial Black", "Gadget", sans-serif; */
-
-  color: #f6f6f6;
-  margin-top: 10px;
- margin-left: 38vw;
- font-size: 20px;
-  font-weight: 700
-
-
-
+.songlistartist {
+  padding-left: 5px;
+  margin-top: -12px;
+  position: absolute
 }
 
-.songnametext {
+.h1margin {
+  /* margin-top: 150px;
+  margin-left: 10px; */
+ 
+ margin-top: 6vh;
+  margin-left: 1vw;
+ 
+ font-family: Arial,sans-serif;
+ color: rgb(106, 16, 234);
+ font-weight: 700;
+}
+
+
+ .songartisttext {
   /* font-family: "Arial Black", "Gadget", sans-serif; */
-  color:  rgb(221, 69, 211);
+  /* color: rgb(106, 16, 234) */
   font-weight: 700;
   white-space: nowrap; 
   overflow: hidden;
   text-overflow: ellipsis;
+ 
+}
+ 
+
+
+
 
 }
+
+
+
+
+
+
+@media (max-width: 599px), (min-width: 600px) and (max-width: 899px), (min-width: 900px) and (max-width: 1199px) {
+
+  .header1{
+    /* font-family: "Arial Black", "Gadget", sans-serif; */
+  
+   color: #f6f6f6;
+   margin-top: 5vh;
+   margin-left: 10vw;
+   font-size: 40px;
+   font-weight: 700
+  }
+
+  .text1{
+    /* font-family: "Arial Black", "Gadget", sans-serif; */
+  
+    color: #f6f6f6;
+    margin-top: 10px;
+   margin-left: 10vw;
+   font-size: 20px;
+    font-weight: 700
+  
+  }
+
+  .box {
+    margin-left: 2vw;
+    margin-top: 40px;
+    width: 300px;
+    height: 50px;
+  }
+  
+  .container input#search {
+    width: 200px;
+    height: 40px;
+    background: #f1f1f1;
+    border: none;
+    font-size: 10pt;
+    float: left;
+    color: #343d46;
+    padding-left: 5px;
+    border-radius: 2px;
+    margin-left: 10px
+  }
+
+  .search {
+    width: 80px;
+    height: 40px;
+    margin-left: 0px;
+    border-radius: 2px;
+    border: none;
+    background:   rgb(106, 16, 234);
+    color: #f1f1f1;
+  }
+
+  .songlistartist {
+    padding-left: 5px;
+    margin-top: -12px;
+    position: absolute
+  }
+
+  .songlistcontainer{
+    /* font-family: "Arial Black", "Gadget", sans-serif; */
+    color: rgb(106, 16, 234);
+    font-weight: 700;
+    font-size: 44px;
+    margin-top: -2vh
+
+}
+
+
+.h1margin {
+  /* margin-top: 150px;
+  margin-left: 10px; */
+ 
+ margin-top: 6vh;
+  margin-left: 1vw;
+ 
+ font-family: Arial,sans-serif;
+ color: rgb(106, 16, 234);
+ font-weight: 700;
+ font-size: 44px
+ 
+ 
+}
+
 
 .songartisttext {
   /* font-family: "Arial Black", "Gadget", sans-serif; */
@@ -422,14 +562,25 @@ h2 {
 
 }
 
-.songlistcontainer{
-    /* font-family: "Arial Black", "Gadget", sans-serif; */
-    color: rgb(106, 16, 234);
-    font-weight: 700;
-    font-size: 44px;
-    margin-top: -6vh
+
 
 }
+
+
+
+.songnametext {
+  /* font-family: "Arial Black", "Gadget", sans-serif; */
+  color:  rgb(221, 69, 211);
+  font-weight: 700;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+
+
+
 
 /* Save playlist button */
 
@@ -485,52 +636,176 @@ h2 {
 
 /* homepage styles */
 
-.button5 {
-  background-color: #1DB954;
-  border: none;
-  color: white;
-  padding: 15px 80px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
-  margin: 20px 2px;
-  margin-left: 43vw;
-  margin-top: 56vh;
-  cursor: pointer;  
-  border-radius:2em;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 700;
+
+
+
+
+@media  (min-width: 800px) {
+
+  .header2{
+    /* font-family: "Arial Black", "Gadget", sans-serif; */
+  
+    color: #f6f6f6;
+    margin-top: -225px;
+   margin-left: 250px;
+   font-size: 80px;
+   font-weight: 700
+  }
+
+  .text2{
+    /* font-family: "Arial Black", "Gadget", sans-serif; */
+  
+    color: #f6f6f6;
+    margin-top: 10px;
+   margin-left: 450px;
+   font-size: 18px;
+    font-weight: 700
+  
+  
+  
+  }
+  
+  .button5 {
+    background-color: #1DB954;
+    border: none;
+    color: white;
+    padding: 15px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: -20px 2px;
+    margin-left: 38vw;
+    margin-top: 56vh;
+    cursor: pointer;  
+    border-radius:2em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    /* position:absolute */
+  }
+
+
+  .button5:hover {
+    background:  #35d578;
+    color: rgb(245, 244, 244);
+  }
+
 
 }
 
-.button5:hover {
-  background:  #35d578;
-  color: rgb(245, 244, 244);
+
+@media   (max-width: 599px), (min-width: 600px) and (max-width: 899px), (min-width: 900px) and (max-width: 1199px) {
+
+  .header2{
+    /* font-family: "Arial Black", "Gadget", sans-serif; */
+  
+    color: #f6f6f6;
+   margin-top: -25vh;
+   margin-left: 15vw;
+   font-size: 35px;
+   font-weight: 700
+  }
+
+  .text2{
+    /* font-family: "Arial Black", "Gadget", sans-serif; */
+  
+    color: #f6f6f6;
+    margin-top: -1vh;
+   margin-left: 20vw;
+   font-size: 15px;
+    font-weight: 700
+  
+  
+  
+  }
+  
+  .button5 {
+    background-color: #1DB954;
+    border: none;
+    color: white;
+    padding: 15px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 20px 2px;
+    margin-left: 18vw;
+    margin-top: 56vh;
+    cursor: pointer;  
+    border-radius:2em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    /* position:absolute */
+  }
+
+
+  .button5:hover {
+    background:  #35d578;
+    color: rgb(245, 244, 244);
+  }
+
+
+
 }
 
-.header2{
-  /* font-family: "Arial Black", "Gadget", sans-serif; */
 
-  color: #f6f6f6;
-  margin-top: -25vh;
- margin-left: 32vw;
- font-size: 80px;
- font-weight: 700
+@media  (min-width: 300px) and (max-width: 400px) {
+
+
+  .header2{
+    /* font-family: "Arial Black", "Gadget", sans-serif; */
+  
+    color: #f6f6f6;
+   margin-top: -25vh;
+   margin-left: 15vw;
+   font-size: 30px;
+   font-weight: 700
+  }
+
+  .text2{
+    /* font-family: "Arial Black", "Gadget", sans-serif; */
+  
+    color: #f6f6f6;
+    margin-top: -1vh;
+   margin-left: 15vw;
+   font-size: 15px;
+    font-weight: 700
+  
+  
+  
+  }
+  
+  .button5 {
+    background-color: #1DB954;
+    border: none;
+    color: white;
+    padding: 15px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 5px 2px;
+    margin-left: 14vw;
+    margin-top: 56vh;
+    cursor: pointer;  
+    border-radius:2em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    /* position:absolute */
+  }
+
+
+  .button5:hover {
+    background:  #35d578;
+    color: rgb(245, 244, 244);
+  } 
+  
+
 }
 
-.text2{
-  /* font-family: "Arial Black", "Gadget", sans-serif; */
-
-  color: #f6f6f6;
-  margin-top: -1vh;
- margin-left: 42vw;
- font-size: 18px;
-  font-weight: 700
 
 
 
-}
 
 
 

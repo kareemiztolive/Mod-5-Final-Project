@@ -10,7 +10,9 @@ export default class SongList extends Component {
           <div className="pinkpurplecolor">
         <span class="w3-large">{this.props.song.name}</span>
         </div><br></br>
+        <div className="songlistartist">
         <span>{this.props.song.artists[0].name}</span>
+        </div>
       </div>
     </li>
 

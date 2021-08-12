@@ -216,7 +216,7 @@ export default class SpotifyIndex extends Component {
         Authorization: `Bearer ${access_token}`
       },
       body: JSON.stringify({
-        name: "Flatiron ShowCase Playlist",
+        name: "And We Back",
         description: "A unique playlist just for you"
       })
     })
@@ -267,15 +267,15 @@ export default class SpotifyIndex extends Component {
             </a>
           </h1>
           <ul className="main-nav">
-            <li>
+            {/* <li>
               <a href="#">Premium</a>
             </li>
             <li>
               <a href="#">Help</a>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <a href="#">Download</a>
-            </li>
+            </li> */}
             <li>
               <a href="/home">Home</a>
 
