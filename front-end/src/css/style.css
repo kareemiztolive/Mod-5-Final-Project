@@ -1,5 +1,5 @@
 .box {
-  margin-left: 500px;
+  margin-left: 38vw;
   margin-top: 50px;
   width: 300px;
   height: 50px;
@@ -38,13 +38,13 @@
   margin-left: 0px;
   border-radius: 2px;
   border: none;
-  background: #9f7fd4;
+  background:   rgb(106, 16, 234);
   color: #f1f1f1;
 }
 
 button:hover {
-  background: #35d578;
-  color: black;
+  background: rgb(106, 0, 255);
+  color: white
 }
 
 .section {
@@ -153,12 +153,15 @@ a {
 		align-items: center;
 		width: 80%;
 		margin: 0 auto;
-		width: 1440px;
+		width: 100vw;
 }
 
 .h1margin {
- margin-top: 150px;
- margin-left: 10px;
+ /* margin-top: 150px;
+ margin-left: 10px; */
+
+margin-top: 6vh;
+ margin-left: 1vw;
 
 font-family: Arial,sans-serif;
 color: rgb(106, 16, 234);
@@ -221,7 +224,7 @@ h2 {
 /* Sign up & Login InputForm Styles */
 
 .box2 {
-  margin-left: 500px;
+  margin-left: 34.5vw;
   margin-top: 20px;
   width: 300px;
   height: 50px;
@@ -258,7 +261,7 @@ h2 {
 
 
 .box3 {
-  margin-left: 500px;
+  margin-left: 34.5vw;
   margin-top: 30px;
   width: 300px;
   height: 50px;
@@ -295,7 +298,7 @@ h2 {
 .spotifyblacklogo{
    /* margin-left: 600px;
   margin-top: 200px; */
-    margin: 50px 620px;
+    margin: 50px 41vw;
 
 
 
@@ -311,7 +314,7 @@ h2 {
   display: inline-block;
   font-size: 15px;
   margin: 20px 2px;
-  margin-left: 580px;
+  margin-left: 38.5vw;
   cursor: pointer;  
   border-radius:2em;
 /*   box-sizing: border-box; */
@@ -335,7 +338,7 @@ h2 {
   display: inline-block;
   font-size: 15px;
   margin: 60px 2px;
-  margin-left: 580px;
+  margin-left: 38.5vw;
   cursor: pointer;  
   border-radius:2em;
 /*   box-sizing: border-box; */
@@ -374,14 +377,14 @@ h2 {
   color: rgb(106, 16, 234)
 }
 
-/* homepage styles */
+/* spotifyindex/playlist styles */
 
 .header1{
   /* font-family: "Arial Black", "Gadget", sans-serif; */
 
   color: #f6f6f6;
-  margin-top: 30px;
- margin-left: 550px;
+  margin-top: 10vh;
+ margin-left: 40vw;
  font-size: 50px;
  font-weight: 700
 }
@@ -391,7 +394,7 @@ h2 {
 
   color: #f6f6f6;
   margin-top: 10px;
- margin-left: 500px;
+ margin-left: 38vw;
  font-size: 20px;
   font-weight: 700
 
@@ -423,9 +426,117 @@ h2 {
     /* font-family: "Arial Black", "Gadget", sans-serif; */
     color: rgb(106, 16, 234);
     font-weight: 700;
-    font-size: 44px
+    font-size: 44px;
+    margin-top: -6vh
 
 }
+
+/* Save playlist button */
+
+.button3 {
+  background-color: rgb(106, 16, 234);
+  border: none;
+  color: white;
+  padding: 15px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 20px 2px;
+  margin-left: 2vw;
+  margin-top: 23vh;
+  cursor: pointer;  
+  border-radius:2em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+
+}
+
+.button3:hover {
+  background:  rgb(106, 0, 255);
+  color: rgb(245, 244, 244);
+}
+
+/* new playlist button */
+
+.button4 {
+  background-color: rgb(221, 69, 211);
+  border: none;
+  color: white;
+  padding: 15px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 20px 2px;
+  margin-left: 2vw;
+  margin-top: 23vh;
+  cursor: pointer;  
+  border-radius:2em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+
+}
+
+.button4:hover {
+  background: rgb(255, 0, 238);
+  color: rgb(245, 244, 244);
+}
+
+/* homepage styles */
+
+.button5 {
+  background-color: #1DB954;
+  border: none;
+  color: white;
+  padding: 15px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 20px 2px;
+  margin-left: 43vw;
+  margin-top: 56vh;
+  cursor: pointer;  
+  border-radius:2em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+
+}
+
+.button5:hover {
+  background:  #35d578;
+  color: rgb(245, 244, 244);
+}
+
+.header2{
+  /* font-family: "Arial Black", "Gadget", sans-serif; */
+
+  color: #f6f6f6;
+  margin-top: -25vh;
+ margin-left: 32vw;
+ font-size: 80px;
+ font-weight: 700
+}
+
+.text2{
+  /* font-family: "Arial Black", "Gadget", sans-serif; */
+
+  color: #f6f6f6;
+  margin-top: -1vh;
+ margin-left: 42vw;
+ font-size: 18px;
+  font-weight: 700
+
+
+
+}
+
+
+
+
+
+
 
 
 	
