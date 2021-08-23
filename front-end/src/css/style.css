@@ -1,3 +1,10 @@
+.body {
+  background-color: black
+}
+
+
+
+
 .box {
   margin-left: 38vw;
   margin-top: 50px;
@@ -456,6 +463,60 @@ h2 {
  
 }
  
+/* new playlist button */
+
+.button4 {
+  background-color: rgb(221, 69, 211);
+  border: none;
+  color: white;
+  padding: 15px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 20px 2px;
+  margin-left: 2vw;
+  margin-top: 23vh;
+  cursor: pointer;  
+  border-radius:2em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+
+}
+
+.button4:hover {
+  background: rgb(255, 0, 238);
+  color: rgb(245, 244, 244);
+}
+
+
+.button3 {
+  background-color: rgb(106, 16, 234);
+  border: none;
+  color: white;
+  padding: 15px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 20px 2px;
+  margin-left: 2vw;
+  margin-top: 23vh;
+  cursor: pointer;  
+  border-radius:2em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+
+}
+
+.button3:hover {
+  background:  rgb(106, 0, 255);
+  color: rgb(245, 244, 244);
+}
+
+
+
+
 
 
 
@@ -562,6 +623,59 @@ h2 {
 
 }
 
+/* new playlist button */
+
+.button4 {
+  background-color: rgb(221, 69, 211);
+  border: none;
+  color: white;
+  padding: 15px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 20px 2px;
+  margin-left: 2vw;
+  margin-top: 5vh;
+  cursor: pointer;  
+  border-radius:2em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+
+}
+
+.button4:hover {
+  background: rgb(255, 0, 238);
+  color: rgb(245, 244, 244);
+}
+
+.button3 {
+  background-color: rgb(106, 16, 234);
+  border: none;
+  color: white;
+  padding: 15px 42px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 20px 2px;
+  margin-left: 2vw;
+  margin-top: 26vh;
+  cursor: pointer;  
+  border-radius:2em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+
+}
+
+.button3:hover {
+  background:  rgb(106, 0, 255);
+  color: rgb(245, 244, 244);
+}
+
+
+
+
 
 
 }
@@ -584,55 +698,7 @@ h2 {
 
 /* Save playlist button */
 
-.button3 {
-  background-color: rgb(106, 16, 234);
-  border: none;
-  color: white;
-  padding: 15px 60px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
-  margin: 20px 2px;
-  margin-left: 2vw;
-  margin-top: 23vh;
-  cursor: pointer;  
-  border-radius:2em;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 700;
 
-}
-
-.button3:hover {
-  background:  rgb(106, 0, 255);
-  color: rgb(245, 244, 244);
-}
-
-/* new playlist button */
-
-.button4 {
-  background-color: rgb(221, 69, 211);
-  border: none;
-  color: white;
-  padding: 15px 60px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;
-  margin: 20px 2px;
-  margin-left: 2vw;
-  margin-top: 23vh;
-  cursor: pointer;  
-  border-radius:2em;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 700;
-
-}
-
-.button4:hover {
-  background: rgb(255, 0, 238);
-  color: rgb(245, 244, 244);
-}
 
 /* homepage styles */
 

@@ -5,6 +5,8 @@ import { BrowserRouter, Route } from "react-router-dom";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import HomePage from "./components/HomePage";
+import DeluxeEdition from "./components/DeluxeEdition";
+
 
 export default class App extends Component {
   state = {
@@ -45,6 +47,12 @@ export default class App extends Component {
             )}
           />
           <Route exact path="/home" component={HomePage} />
+          <Route exact path="/deluxeedition" component={DeluxeEdition} />
+          <Route
+            exact
+            path="/deluxeedition/:access_token"
+            component={props => <SpotifyIndex {...props} />}
+          />
         </BrowserRouter>
       </div>
     );
