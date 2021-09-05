@@ -45,21 +45,30 @@ export default class SpotifyIndex extends Component {
 
   handleSubmit = inputvalues => {
     this.getArtistIds(inputvalues).then(artistsIds => {
-      this.getArtistSongs(artistsIds).then(artistSongs => {
-        let newArtistSongs = artistSongs.flat(Infinity);
-        // console.log(newArtistSongs);
-        let searchedArtistSongs = this.randomizeArtistTracks(newArtistSongs);
-        // console.log(searchedArtistSongs);
-        this.getSimilarArtistsSongs(artistsIds).then(similarArtistSongs => {
-          let newsongs = similarArtistSongs.flat(Infinity);
-          // console.log(newsongs);
-          let searchedSongs = this.randomizeTracks(newsongs);
-          // console.log(searchedSongs);
-          let finalSongList = [...searchedArtistSongs, ...searchedSongs];
-          this.setState({ Songs: finalSongList });   
+      this.getArtistSongs(artistsIds).then(firstArtistsSongs => {
+        let artistSongs = firstArtistsSongs.flat(Infinity)
+        console.log(artistSongs)
+        let originalArtistSongs = this.randomizeArtistTracks(artistSongs);
+          // console.log(originalArtistSongs)
+      this.getArtistAlbumSongs(artistsIds).then(firstArtistsAlbumSongs => {
+        let artistAlbumSongs = firstArtistsAlbumSongs.flat(Infinity)
+        console.log(artistAlbumSongs)
+        let originalArtistAlbumSongs = this.randomizeArtistAlbumTracks(artistAlbumSongs);
+          // console.log(originalArtistAlbumSongs)
+        this.getSimilarArtistsSongs(artistsIds).then(relatedArtistsSongs => {
+          let similarArtistsSongs = relatedArtistsSongs.flat(Infinity)
+          console.log(similarArtistsSongs)
+          let alikeArtistSongs = this.randomizeTracks(similarArtistsSongs);
+          // console.log(alikeArtistSongs)
+          let SongList = [...originalArtistSongs, ...originalArtistAlbumSongs];
+          let finalSongList = [...SongList, ...alikeArtistSongs];
+
+          this.setState({ Songs: finalSongList }); 
+          console.log(finalSongList)  
         });
       });
     });
+  })
   };
 
 
@@ -115,6 +124,74 @@ export default class SpotifyIndex extends Component {
     );
   }
 
+
+
+  
+
+  getArtistAlbumSongs(artistsIds) {
+    return Promise.all(
+      artistsIds.map(artistId => {
+        return fetch(
+          `https://api.spotify.com/v1/artists/${artistId}/albums`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${this.state.accesstoken.access_token}`
+            }
+          }
+        )
+          .then(res => res.json())
+          .then(artistalbums => {
+            let albumIds = artistalbums.items.map(item => item.id)
+            // console.log(albumIds)
+
+            return Promise.all(
+              albumIds.map(albumId => {
+                return fetch(
+                  `https://api.spotify.com/v1/albums/${albumId}/tracks`,
+                  {
+                    method: "GET",
+                    headers: {
+                      "Content-Type": "application/json",
+                      Authorization: `Bearer ${this.state.accesstoken.access_token}`
+                    }
+                  }
+                )
+                  .then(res => res.json())
+                  .then(albumsongs => {
+                    let albumSongNames = albumsongs.items.map(item => item.name)
+                    console.log(albumSongNames)
+                    let albumSongIds = albumsongs.items.map(item => item.id)
+                    // console.log(albumSongIds)
+                                    
+                    return Promise.all(
+                      albumSongIds.map(albumSongId => {
+                        return fetch(
+                          `https://api.spotify.com/v1/tracks/${albumSongId}`,
+                          {
+                            method: "GET",
+                            headers: {
+                              "Content-Type": "application/json",
+                              Authorization: `Bearer ${this.state.accesstoken.access_token}`
+                            }
+                          }
+                        )
+                          .then(res => res.json())
+                          .then(artistsongs => {
+                            // console.log(artistsongs)
+                            return artistsongs
+                          });
+                      })
+                    );
+                  });
+              })
+            );
+          });
+      })
+    );
+  }
+
   getSimilarArtistsSongs(artistsIds) {
     return Promise.all(
       artistsIds.map(artistId => {
@@ -154,7 +231,7 @@ export default class SpotifyIndex extends Component {
   randomizeTracks(newsongs) {
     let randomSongs = [];
     let i = 1;
-    while (i <= 35) {
+    while (i <= 40) {
       let randomIndex = Math.floor(Math.random() * newsongs.length);
       let randomsong = newsongs[randomIndex];
       newsongs.splice(randomIndex, 1);
@@ -172,6 +249,20 @@ export default class SpotifyIndex extends Component {
       let randomIndex = Math.floor(Math.random() * newArtistSongs.length);
       let randomsong = newArtistSongs[randomIndex];
       newArtistSongs.splice(randomIndex, 1);
+      randomSongs.push(randomsong);
+      i++;
+    }
+
+    return randomSongs;
+  }
+
+  randomizeArtistAlbumTracks(artistAlbumSongs) {
+    let randomSongs = [];
+    let i = 1;
+    while (i <= 20) {
+      let randomIndex = Math.floor(Math.random() * artistAlbumSongs.length);
+      let randomsong = artistAlbumSongs[randomIndex];
+      artistAlbumSongs.splice(randomIndex, 1);
       randomSongs.push(randomsong);
       i++;
     }
@@ -219,7 +310,7 @@ export default class SpotifyIndex extends Component {
         Authorization: `Bearer ${access_token}`
       },
       body: JSON.stringify({
-        name: "And We Back",
+        name: "Love Your Music",
         description: "A unique playlist just for you"
       })
     })

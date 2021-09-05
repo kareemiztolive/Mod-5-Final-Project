@@ -517,11 +517,9 @@ h2 {
 
 
 
-
-
-
-
 }
+
+
 
 
 
@@ -869,6 +867,168 @@ h2 {
 
 }
 
+
+
+@media  (min-width: 900px) and (max-width: 1000px)  {
+
+  .header2{
+    /* font-family: "Arial Black", "Gadget", sans-serif; */
+  
+    color: #f6f6f6;
+    margin-top: -225px;
+   margin-left: 210px;
+   font-size: 70px;
+   font-weight: 700
+  }
+
+  .text2{
+    /* font-family: "Arial Black", "Gadget", sans-serif; */
+  
+    color: #f6f6f6;
+    margin-top: 15px;
+   margin-left: 350px;
+   font-size: 18px;
+    font-weight: 700
+  
+  
+  
+  }
+  
+  .button5 {
+    background-color: #1DB954;
+    border: none;
+    color: white;
+    padding: 15px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: -20px 2px;
+    margin-left: 38vw;
+    margin-top: 56vh;
+    cursor: pointer;  
+    border-radius:2em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    /* position:absolute */
+  }
+
+
+  .button5:hover {
+    background:  #35d578;
+    color: rgb(245, 244, 244);
+  }
+
+
+}
+
+@media  (min-width: 1000px) and (max-width: 1100px) {
+
+  .header2{
+    /* font-family: "Arial Black", "Gadget", sans-serif; */
+  
+    color: #f6f6f6;
+    margin-top: -240px;
+   margin-left: 210px;
+   font-size: 70px;
+   font-weight: 700
+  }
+
+  .text2{
+    /* font-family: "Arial Black", "Gadget", sans-serif; */
+  
+    color: #f6f6f6;
+    margin-top: 15px;
+   margin-left: 350px;
+   font-size: 18px;
+    font-weight: 700
+  
+  
+  
+  }
+  
+  .button5 {
+    background-color: #1DB954;
+    border: none;
+    color: white;
+    padding: 15px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: -20px 2px;
+    margin-left: 38vw;
+    margin-top: 50vh;
+    cursor: pointer;  
+    border-radius:2em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    /* position:absolute */
+  }
+
+
+  .button5:hover {
+    background:  #35d578;
+    color: rgb(245, 244, 244);
+  }
+
+
+}
+
+
+
+@media  (min-width: 700px) and (max-width: 800px) {
+
+  .header2{
+    /* font-family: "Arial Black", "Gadget", sans-serif; */
+  
+    color: #f6f6f6;
+    margin-top: -200px;
+   margin-left: 180px;
+   font-size: 50px;
+   font-weight: 700
+  }
+
+  .text2{
+    /* font-family: "Arial Black", "Gadget", sans-serif; */
+  
+    color: #f6f6f6;
+    margin-top: 15px;
+   margin-left: 240px;
+   font-size: 18px;
+    font-weight: 700
+  
+  
+  
+  }
+  
+  .button5 {
+    background-color: #1DB954;
+    border: none;
+    color: white;
+    padding: 15px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: -20px 2px;
+    margin-left: 34vw;
+    margin-top: 50vh;
+    cursor: pointer;  
+    border-radius:2em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    /* position:absolute */
+  }
+
+
+  .button5:hover {
+    background:  #35d578;
+    color: rgb(245, 244, 244);
+  }
+
+
+}
 
 
 
