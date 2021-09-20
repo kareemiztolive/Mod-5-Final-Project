@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import SpotifyIndex from "./components/SpotifyIndex";
 import "./App.css";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Redirect } from "react-router-dom";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import HomePage from "./components/HomePage";
@@ -25,6 +25,17 @@ export default class App extends Component {
         {/* <SpotifyIndex /> */}
 
         <BrowserRouter>
+
+        <Route
+         exact
+         path="/">
+
+         <Redirect to="/playlist" />
+
+         </Route>
+        
+       
+
           <Route
             exact
             path="/playlist"

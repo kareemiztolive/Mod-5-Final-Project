@@ -64,60 +64,6 @@ class UsersController < ApplicationController
 
 
 
-
-    # def authorizedeluxe
-
-    #     client_id = "0724f13286da41eb90bef57cebcc0202"
-    #     client_secret = "095c882ed46444a5b878e0b99d9dcd28"
-    #     redirect_uri = "http://localhost:3000/save_token"
-
-    #     credentials = Base64.encode64( client_id + ':' + client_secret)
-    #     credentials["\n"] = ""
-    #      puts(credentials)
-    #     begin
-    #     response = RestClient.post("https://accounts.spotify.com/api/token", 
-    #         {
-    #             :grant_type => "authorization_code",
-    #             :code => params[:code],
-    #             :redirect_uri => "http://localhost:3000/save_tokendeluxe" #, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
-    #         },
-    #         {
-    #             :Authorization => 'Basic ' + credentials
-
-    #         }
-    #     )
-
-    # rescue => err 
-    #     puts err.http_body
-    # end
-
-    # result = JSON.parse(response)
-
-    # puts(result)
-
-
-    # redirect_to "http://localhost:3001/deluxeedition/#{result["access_token"]}"
-
-
-
-
-
-        # client_id = "0724f13286da41eb90bef57cebcc0202";
-        # client_secret = "095c882ed46444a5b878e0b99d9dcd28";
-        # redirect_uri = encodeURIComponent("http://localhost:3000/save_token");
-
-        #    body = new URLSearchParams();
-        # body.append("grant_type", "authorization_code");
-        # fetch("https://accounts.spotify.com/api/token", {
-        #   method: "POST",
-        #   headers: {
-        #     Authorization: `Basic #{btoa(`#{client_id}:#{client_secret}`)}`
-        #   },
-        #   body: body
-        #   code: params[:code]
-        #   redirect_uri: redirect_uri
-        # })
-
     end
 
 

@@ -132,7 +132,7 @@ export default class SpotifyIndex extends Component {
     return Promise.all(
       artistsIds.map(artistId => {
         return fetch(
-          `https://api.spotify.com/v1/artists/${artistId}/albums`,
+          `https://api.spotify.com/v1/artists/${artistId}/albums?limit=15`,
           {
             method: "GET",
             headers: {
@@ -231,7 +231,7 @@ export default class SpotifyIndex extends Component {
   randomizeTracks(newsongs) {
     let randomSongs = [];
     let i = 1;
-    while (i <= 40) {
+    while (i <= 30) {
       let randomIndex = Math.floor(Math.random() * newsongs.length);
       let randomsong = newsongs[randomIndex];
       newsongs.splice(randomIndex, 1);
@@ -259,7 +259,7 @@ export default class SpotifyIndex extends Component {
   randomizeArtistAlbumTracks(artistAlbumSongs) {
     let randomSongs = [];
     let i = 1;
-    while (i <= 20) {
+    while (i <= 16) {
       let randomIndex = Math.floor(Math.random() * artistAlbumSongs.length);
       let randomsong = artistAlbumSongs[randomIndex];
       artistAlbumSongs.splice(randomIndex, 1);
@@ -398,6 +398,7 @@ export default class SpotifyIndex extends Component {
                 type="search"
                 id="search"
                 placeholder="Enter Artist Names..."
+                required="required"
               />
               <button className="search" type="submit">
                 Playlist
