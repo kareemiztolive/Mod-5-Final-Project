@@ -342,7 +342,7 @@ export default class SpotifyIndex extends Component {
   render() {
     const access_token = this.props.match.params.access_token;
     return (
-      <div className="body"
+      <div 
         style={{
           height: "56vh",
           width: "100vw",
