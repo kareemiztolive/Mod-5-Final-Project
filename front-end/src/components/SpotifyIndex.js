@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import backgroundimage from "../images/bluebackground1.png";
-import spotifywhitelogo from "../images/spotifywhitelogo.png";
+import loveyourmusictransparent2 from "../images/loveyourmusictransparent2.png";
 import SongContainer from "./SongContainer";
 import SongListContainer from "./SongListContainer";
 import { Link } from "react-router-dom";
@@ -131,63 +131,141 @@ export default class SpotifyIndex extends Component {
   getArtistAlbumSongs(artistsIds) {
     return Promise.all(
       artistsIds.map(artistId => {
-        return fetch(
-          `https://api.spotify.com/v1/artists/${artistId}/albums?limit=15`,
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${this.state.accesstoken.access_token}`
-            }
-          }
-        )
-          .then(res => res.json())
-          .then(artistalbums => {
-            let albumIds = artistalbums.items.map(item => item.id)
-            // console.log(albumIds)
+        
+        try {
 
-            return Promise.all(
-              albumIds.map(albumId => {
-                return fetch(
-                  `https://api.spotify.com/v1/albums/${albumId}/tracks`,
-                  {
-                    method: "GET",
-                    headers: {
-                      "Content-Type": "application/json",
-                      Authorization: `Bearer ${this.state.accesstoken.access_token}`
+          return fetch(
+            `https://api.spotify.com/v1/artists/${artistId}/albums?limit=15`,
+            {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${this.state.accesstoken.access_token}`
+              }
+            }
+          )
+            .then(res => res.json())
+            .then(artistalbums => {
+              let albumIds = artistalbums.items.map(item => item.id)
+              // console.log(albumIds)
+  
+              return Promise.all(
+                albumIds.map(albumId => {
+                  return fetch(
+                    `https://api.spotify.com/v1/albums/${albumId}/tracks`,
+                    {
+                      method: "GET",
+                      headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${this.state.accesstoken.access_token}`
+                      }
                     }
-                  }
-                )
-                  .then(res => res.json())
-                  .then(albumsongs => {
-                    let albumSongNames = albumsongs.items.map(item => item.name)
-                    console.log(albumSongNames)
-                    let albumSongIds = albumsongs.items.map(item => item.id)
-                    // console.log(albumSongIds)
-                                    
-                    return Promise.all(
-                      albumSongIds.map(albumSongId => {
-                        return fetch(
-                          `https://api.spotify.com/v1/tracks/${albumSongId}`,
-                          {
-                            method: "GET",
-                            headers: {
-                              "Content-Type": "application/json",
-                              Authorization: `Bearer ${this.state.accesstoken.access_token}`
+                  )
+                    .then(res => res.json())
+                    .then(albumsongs => {
+                      let albumSongNames = albumsongs.items.map(item => item.name)
+                      console.log(albumSongNames)
+                      let albumSongIds = albumsongs.items.map(item => item.id)
+                      // console.log(albumSongIds)
+                                      
+                      return Promise.all(
+                        albumSongIds.map(albumSongId => {
+                          return fetch(
+                            `https://api.spotify.com/v1/tracks/${albumSongId}`,
+                            {
+                              method: "GET",
+                              headers: {
+                                "Content-Type": "application/json",
+                                Authorization: `Bearer ${this.state.accesstoken.access_token}`
+                              }
                             }
-                          }
-                        )
-                          .then(res => res.json())
-                          .then(artistsongs => {
-                            // console.log(artistsongs)
-                            return artistsongs
-                          });
-                      })
-                    );
-                  });
-              })
-            );
-          });
+                          )
+                            .then(res => res.json())
+                            .then(artistsongs => {
+                              // console.log(artistsongs)
+                              return artistsongs
+                            });
+                        })
+                      );
+                    });
+                })
+              );
+            });
+          
+          
+        }
+        
+        catch(err) {
+
+
+
+          return fetch(
+            `https://api.spotify.com/v1/artists/${artistId}/albums?limit=5`,
+            {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${this.state.accesstoken.access_token}`
+              }
+            }
+          )
+            .then(res => res.json())
+            .then(artistalbums => {
+              let albumIds = artistalbums.items.map(item => item.id)
+              // console.log(albumIds)
+  
+              return Promise.all(
+                albumIds.map(albumId => {
+                  return fetch(
+                    `https://api.spotify.com/v1/albums/${albumId}/tracks`,
+                    {
+                      method: "GET",
+                      headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${this.state.accesstoken.access_token}`
+                      }
+                    }
+                  )
+                    .then(res => res.json())
+                    .then(albumsongs => {
+                      let albumSongNames = albumsongs.items.map(item => item.name)
+                      console.log(albumSongNames)
+                      let albumSongIds = albumsongs.items.map(item => item.id)
+                      // console.log(albumSongIds)
+                                      
+                      return Promise.all(
+                        albumSongIds.map(albumSongId => {
+                          return fetch(
+                            `https://api.spotify.com/v1/tracks/${albumSongId}`,
+                            {
+                              method: "GET",
+                              headers: {
+                                "Content-Type": "application/json",
+                                Authorization: `Bearer ${this.state.accesstoken.access_token}`
+                              }
+                            }
+                          )
+                            .then(res => res.json())
+                            .then(artistsongs => {
+                              // console.log(artistsongs)
+                              return artistsongs
+                            });
+                        })
+                      );
+                    });
+                })
+              );
+            });
+         
+            
+
+        }
+       
+        
+        
+        
+        
+        
       })
     );
   }
@@ -352,21 +430,19 @@ export default class SpotifyIndex extends Component {
         }}
       >
         <header className="header">
-          <h1 className="logo">
-            <a href="/deluxeedition">
+        <h1 className="logo">
               <img
-                src={spotifywhitelogo}
-                style={{ width: "200px", left: "800px" }}
+                src={loveyourmusictransparent2}
+                style={{ width: "160px", left: "800px" }}
               />
-            </a>
           </h1>
           <ul className="main-nav">
             {/* <li>
               <a href="#">Premium</a>
-            </li>
+            </li> */}
             <li>
               <a href="#">Help</a>
-            </li> */}
+            </li>
             {/* <li>
               <a href="#">Download</a>
             </li> */}
